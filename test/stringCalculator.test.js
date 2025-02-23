@@ -1,4 +1,4 @@
-import add from "../src/stringCalculator.js";
+import add from "../public/stringCalculator.js";
 
 test("returns 0 for an empty string", () => {
     expect(add("")).toBe(0);

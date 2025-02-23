@@ -1,6 +1,5 @@
 export default function add(numbers) {
     if (numbers === "") return 0;
-
     let delimiter = /,|\n/;
     if (numbers.startsWith("//")) {
         const match = numbers.match(/^\/\/(.+)\n/);
@@ -16,6 +15,5 @@ export default function add(numbers) {
     if (negatives.length) {
         throw new Error(`Negative numbers not allowed: ${negatives.join(", ")}`);
     }
-
     return numArray.reduce((sum, num) => sum + num, 0);
 }
