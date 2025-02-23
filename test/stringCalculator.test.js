@@ -27,3 +27,7 @@ test("supports different delimiters", () => {
 test("throws error for negative numbers", () => {
     expect(() => add("1,-2,3,-4")).toThrow("Negative numbers not allowed: -2, -4");
 });
+
+test("ignores non-numeric characters and sums the valid ones", () => {
+    expect(add("'1',a,'3'")).toBe(4);
+});

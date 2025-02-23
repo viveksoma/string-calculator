@@ -9,7 +9,11 @@ export default function add(numbers) {
         }
     }
 
-    const numArray = numbers.split(delimiter).map(Number);
+    const numArray = numbers.split(delimiter)
+        .map(num => num.trim().replace(/^["']|["']$/g, ""))
+        .filter(num => !isNaN(num) && num !== "")
+        .map(Number);
+
     const negatives = numArray.filter(num => num < 0);
 
     if (negatives.length) {
